@@ -1,5 +1,5 @@
 # LearningLog
-Web application allows user to save data he has already learnt. 
+Web application allows user to save data and add new notes about the things he has already learnt. 
 
 # Used Technologies:
 - Python 3.8
