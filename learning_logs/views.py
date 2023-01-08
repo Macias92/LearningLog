@@ -6,20 +6,20 @@ from learning_logs.forms import TopicForm, EntryForm
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'learning_logs/index.html')
 
 
 def topics(request):
     topics = Topic.objects.order_by('date_added')
     context = {'topics': topics}
-    return render(request, 'topics.html', context)
+    return render(request, 'learning_logs/topics.html', context)
 
 
 def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
-    return render(request, 'topic.html', context)
+    return render(request, 'learning_logs/topic.html', context)
 
 
 def new_topic(request):
@@ -32,7 +32,7 @@ def new_topic(request):
             return redirect('learning_logs:topics')
 
     context = {'form': form}
-    return render(request, 'new_topic.html', context)
+    return render(request, 'learning_logs/new_topic.html', context)
 
 
 def new_entry(request, topic_id):
@@ -49,7 +49,7 @@ def new_entry(request, topic_id):
             return redirect('learning_logs:topic', topic_id=topic_id)
         
     context = {'form': form, 'topic': topic}
-    return render(request, 'new_entry.html', context)
+    return render(request, 'learning_logs/new_entry.html', context)
 
 def edit_entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
@@ -63,6 +63,6 @@ def edit_entry(request, entry_id):
             return redirect('learning_logs:topic', topic_id=topic.id)
         
     context = {'entry': entry, 'form': form, 'topic': topic}
-    return render(request, 'edit_entry.html', context)
+    return render(request, 'learning_logs/edit_entry.html', context)
         
 
