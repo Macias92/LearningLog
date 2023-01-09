@@ -1,3 +1,5 @@
 ll_venv/
 .idea/
 *.pyc
+__pycache__/
+*.sqlite3
