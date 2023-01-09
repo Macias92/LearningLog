@@ -1,5 +1,10 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<p>Learning Log helps in monitoring the learning progress during knowing new topic.</p>
-{% endblock content %}
+{% extends 'base.html' %} {% block page_header %}
+<div class="jumbotron">
+	<h1 class="display-3">Track learning progress</h1>
+	<p class="lead">
+		Sign in to start using Learning Log and display list of topics. When you learn something new in specific topic,
+		create an entry that summarizes what you learned.
+	</p>
+	<a class="btn btn-lg btn-primary" href=" {% url 'users:register' %} role=" button>Register &raquo;</a>
+</div>
+{% endblock %}

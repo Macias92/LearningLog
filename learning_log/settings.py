@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     # My applications:
     'learning_logs',
     'users',
+    
+    # Other companies apps:
+    'bootstrap4',
+    
 
 ]
 
