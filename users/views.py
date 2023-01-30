@@ -35,7 +35,7 @@ class LoginView(View):
                 redirect_url = request.GET.get('next', '/')
                 return redirect(redirect_url)
             else:
-                return render(request, 'login.html', {'form': form})
+                return render(request, 'users/login.html', {'form': form})
 
 
 class LogoutView(View):
